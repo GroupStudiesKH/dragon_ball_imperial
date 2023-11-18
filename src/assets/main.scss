@@ -160,9 +160,9 @@ main{
         width: 100%;
         height: 100%;
         background-image: url("../assets/img/dragon_right_big.png");
-        background-position: top right -200%;
+        background-position: top -100px right -180px;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: 130%;
     }
 
     .left_top_logo_full{
@@ -172,9 +172,9 @@ main{
         width: 100%;
         height: 100%;
         background-image: url("../assets/img/logo_left_top.png");
-        background-position: center center;
+        background-position: top -100px left;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: 110%;
         z-index: 1;
     }
 
