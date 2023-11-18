@@ -107,12 +107,12 @@ main{
     .dragon_right_small{
         position: absolute;
         bottom: 20%;
-        right: -5%;
+        right: 0%;
         width: 40%;
         height: 70%;
         background-image: url("../assets/img/dragon_right_small.png");
-        background-position: top center;
+        background-position: top right -400%;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
     }
 }
