@@ -14,6 +14,19 @@ main{
     background-repeat: no-repeat;
     background-size: cover;
 
+    .main_product_full{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../assets/img/main_product_full.png");
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 1;
+    }
+
     .left_down_cloud{
         position: absolute;
         bottom: 0;
