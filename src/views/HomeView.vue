@@ -2,9 +2,7 @@
 </script>
 
 <template>
-  <main>
-    <div class="container">
-      123
-    </div>
+  <main class="yellow_bg">
+    123
   </main>
 </template>
