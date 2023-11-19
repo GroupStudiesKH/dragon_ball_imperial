@@ -12,7 +12,7 @@ app.use(router);
 app.mount("#app");
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+    navigator.serviceWorker.register('/sw.js').then((registration) => {
       // 在這裡可以使用 registration 來進一步管理 Service Worker
       console.log('Service Worker 注冊成功:', registration);
     });
