@@ -25,8 +25,12 @@ if ('serviceWorker' in navigator) {
 
         // 觸發 Service Worker 檢查 Cache Storage 狀態
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.controller.postMessage({
-                type: 'checkCacheStorage',
+            navigator.serviceWorker.ready.then((registration) => {
+                if (registration && registration.active) {
+                    registration.active.postMessage({
+                        type: 'checkCacheStorage',
+                    });
+                }
             });
         }
     });
