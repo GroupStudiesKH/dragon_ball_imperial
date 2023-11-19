@@ -11,6 +11,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate', 
       includeAssets: ['/**/*.js', '/**/*.png', '/**/*.jpg', '/**/*.jpeg', '/**/*.gif', '/**/*.svg'],
+      manifest: {
+        display: 'fullscreen',
+      }
     })
   ],
   resolve: {
