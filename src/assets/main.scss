@@ -15,7 +15,7 @@ main{
     left: 0;
     top: 0;
     margin: 0 auto;
-    background-image: url("../assets/img/yellow_bg.png");
+    background-image: url("../assets/img/black_bg.png");
     position: absolute;
     background-position: top center;
     background-repeat: no-repeat;
@@ -28,7 +28,7 @@ main{
         width: 100%;
         height: 100%;
         background-image: url("../assets/img/index_title.png");
-        background-position: top 90% center;
+        background-position: top 70% center;
         background-repeat: no-repeat;
         background-size: cover;
         z-index: 2;
@@ -144,11 +144,11 @@ main{
     .dragon_right_small{
         position: absolute;
         bottom: 20%;
-        right: 0%;
-        width: 40%;
-        height: 70%;
+        right: -20%;
+        width: 39%;
+        height: 72%;
         background-image: url("../assets/img/dragon_right_small.png");
-        background-position: top right -400%;
+        background-position: top left;
         background-repeat: no-repeat;
         background-size: contain;
     }
