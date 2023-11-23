@@ -21,6 +21,10 @@ main{
     background-repeat: no-repeat;
     background-size: cover;
 
+    &.yellow_bg{
+        background-image: url("../assets/img/yellow_bg.png");
+    }
+
     .index_title_full{
         position: absolute;
         top: 0;
@@ -57,7 +61,7 @@ main{
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
-        z-index: 1;
+        z-index: 3;
     }
 
     .main_product_full{
@@ -135,10 +139,6 @@ main{
         background-repeat: no-repeat;
         background-size: cover;
         z-index: 3;
-    }
-
-    .intro_slogan{
-
     }
 
     .dragon_right_small{
