@@ -25,6 +25,10 @@ main{
         background-image: url("../assets/img/yellow_bg.png");
     }
 
+    &.game_bg{
+        background-image: url("../assets/img/game_bg.png");
+    }
+
     .index_title_full{
         position: absolute;
         top: 0;
@@ -35,6 +39,19 @@ main{
         background-position: top -80px center;
         background-repeat: no-repeat;
         background-size: 80%;
+        z-index: 2;
+    }
+
+    .game_header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../assets/img/game_header.png");
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: contain;
         z-index: 2;
     }
 
@@ -215,6 +232,68 @@ main{
         background-repeat: no-repeat;
         background-size: cover;
         z-index: 1;
+    }
+
+    @keyframes floatAnimation {
+        0% {
+            transform: translateY(0) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-30px) rotate(-3deg);
+        }
+        100% {
+            transform: translateY(0) rotate(0deg);
+        }
+    }
+
+    .game_dragon {
+        position: absolute;
+        top: 30%;
+        left: 0;
+        width: 40%;
+        height: 30%;
+        background-image: url("../assets/img/side_dragon.png");
+        background-position: center left;
+        background-repeat: no-repeat;
+        background-size: 200%;
+        z-index: 1;
+        animation: floatAnimation 6s infinite;
+    }
+
+    .countdown{
+        position: absolute;
+        top: 0;
+        left: calc(50% - 100px);
+        width: 200px;
+        height: 100%;
+        z-index: 3;
+        background-position: center left;
+        background-repeat: no-repeat;
+        background-size: 100%;
+
+        animation: fadein 1s, fadeout 1s 3s;
+
+        &.countdown_3{
+            background-image: url("../assets/img/game_count_down_3.png");
+        }
+
+        &.countdown_2{
+            background-image: url("../assets/img/game_count_down_2.png");
+        }
+
+        &.countdown_1{
+            background-image: url("../assets/img/game_count_down_1.png");
+        }
+    }
+
+    @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+
+    @keyframes fadeout {
+        from { opacity: 1; }
+        to   { opacity: 0; }
     }
 
     .intro_slogan{

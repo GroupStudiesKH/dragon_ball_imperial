@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import IntroFirstView from "../views/IntroFirstView.vue";
 import IntroSecondView from "../views/IntroSecondView.vue";
+import GameView from "../views/GameView.vue";
 
 
 
@@ -22,6 +23,11 @@ const router = createRouter({
       path: "/intro/2",
       name: "intro_2",
       component: IntroSecondView,
+    },
+    {
+      path: "/game",
+      name: "game",
+      component: GameView,
     },
   ],
 });
