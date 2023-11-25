@@ -4,7 +4,7 @@ import IntroFirstView from "../views/IntroFirstView.vue";
 import IntroSecondView from "../views/IntroSecondView.vue";
 import GameView from "../views/GameView.vue";
 import GameIntroView from "../views/GameIntroView.vue";
-
+import CharmView from "../views/CharmView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,7 +34,11 @@ const router = createRouter({
       name: "game_intro",
       component: GameIntroView,
     },
-
+    {
+      path: "/charm",
+      name: "charm",
+      component: CharmView,
+    }
   ],
 });
 

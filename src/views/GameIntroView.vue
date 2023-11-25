@@ -7,7 +7,8 @@ export default {
     const router = useRouter();
 
     const toNextPage = () => {
-      router.push({ name: "intro_1" });
+      router.push({ name: "charm" });
+      
     };
     return {
       toNextPage,

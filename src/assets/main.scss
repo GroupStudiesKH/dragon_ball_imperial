@@ -33,6 +33,10 @@ main{
         background-image: url("../assets/img/game_intro_bg.png");
     }
 
+    &.charm_bg{
+        background-image: url("../assets/img/charm_bg.png");
+    }
+
     .index_title_full{
         position: absolute;
         top: 0;
@@ -124,6 +128,19 @@ main{
         background-position: top center;
         background-repeat: no-repeat;
         background-size: cover;
+        z-index: 1;
+    }
+
+    .charm_main{
+        position: absolute;
+        top: 12vh;
+        left: 16vw;
+        width: 28vw;
+        height: 45vw;
+        background-image: url("../assets/img/charm.png"), url("../assets/img/charm_shadow.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover, 120%;
         z-index: 1;
     }
 
