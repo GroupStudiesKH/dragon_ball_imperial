@@ -41,8 +41,8 @@ export default {
       }, 8000);
     };
 
-    const clickBall = (rail, ballIndex) => {
-      balls.value[rail].splice(ballIndex, 1);
+    const clickBall = (rail, ballKey) => {
+        delete balls.value[rail][ballKey];
     };
 
     //countdown onmounted
@@ -66,6 +66,7 @@ export default {
       toNextPage,
       countdown,
       balls,
+      clickBall
     };
   },
 };
@@ -82,6 +83,7 @@ export default {
           :class="ball.class"
           v-for="(ball, ballIndex) in balls[0]"
           v-bind:key="ballIndex"
+          @click="clickBall(0, ballIndex)"
         ></div>
       </div>
       <div class="game_ball_rail_2">
@@ -90,6 +92,7 @@ export default {
           :class="ball.class"
           v-for="(ball, ballIndex) in balls[1]"
           v-bind:key="ballIndex"
+          @click="clickBall(1, ballIndex)"
         ></div>
       </div>
       <div class="game_ball_rail_3">
@@ -98,6 +101,7 @@ export default {
           :class="ball.class"
           v-for="(ball, ballIndex) in balls[2]"
           v-bind:key="ballIndex"
+          @click="clickBall(2, ballIndex)"
         ></div>
       </div>
       <div class="game_ball_rail_4">
@@ -106,6 +110,7 @@ export default {
           :class="ball.class"
           v-for="(ball, ballIndex) in balls[3]"
           v-bind:key="ballIndex"
+          @click="clickBall(3, ballIndex)"
         ></div>
       </div>
       <div class="game_ball_rail_5">
@@ -114,6 +119,7 @@ export default {
           :class="ball.class"
           v-for="(ball, ballIndex) in balls[4]"
           v-bind:key="ballIndex"
+          @click="clickBall(4, ballIndex)"
         ></div>
       </div>
     </div>
