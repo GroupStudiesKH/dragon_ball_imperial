@@ -6,26 +6,39 @@ export default {
   setup() {
     const router = useRouter();
     const countdown = ref(4);
-    const balls = ref([[], [], [], [], []]);
+    const balls = ref([{}, {}, {}, {}, {}]);
 
     const createBalls = () => {
       const ballCount = balls.value.length;
       const rail = Math.floor(Math.random() * ballCount);
+      const ballKey = Date.now();
       const ballTypeNum = Math.floor(Math.random() * 10);
-      let ballType = "normal";
-    //   switch (ballTypeNum) {
-    //     case 1:
+      let ballTypeClass = "";
+      switch (ballTypeNum) {
+        case 1:
+          ballTypeClass = "wind_ball";
+          break;
 
-    //         break;
-      
-    //     default:
-    //         ballType = "normal";
-    //         break;
-    //   }
+        case 2:
+          ballTypeClass = "cloud_ball";
+          break;
 
-      balls.value[rail].push({
-        type: ballType
-      });
+        case 3:
+          ballTypeClass = "fire_ball";
+          break;
+
+        default:
+          ballTypeClass = "";
+          break;
+      }
+
+      balls.value[rail][ballKey] = {
+        class: ballTypeClass,
+      };
+
+      setTimeout(() => {
+        delete balls.value[rail][ballKey];
+      }, 8000);
     };
 
     const clickBall = (rail, ballIndex) => {
@@ -39,9 +52,9 @@ export default {
         if (countdown.value === 0) {
           clearInterval(timer);
 
-            setInterval(() => {
-                createBalls();
-            }, 1000);
+          setInterval(() => {
+              createBalls();
+          }, 1000);
         }
       }, 1000);
     });
@@ -66,6 +79,7 @@ export default {
       <div class="game_ball_rail_1">
         <div
           class="game_ball"
+          :class="ball.class"
           v-for="(ball, ballIndex) in balls[0]"
           v-bind:key="ballIndex"
         ></div>
@@ -73,6 +87,7 @@ export default {
       <div class="game_ball_rail_2">
         <div
           class="game_ball"
+          :class="ball.class"
           v-for="(ball, ballIndex) in balls[1]"
           v-bind:key="ballIndex"
         ></div>
@@ -80,6 +95,7 @@ export default {
       <div class="game_ball_rail_3">
         <div
           class="game_ball"
+          :class="ball.class"
           v-for="(ball, ballIndex) in balls[2]"
           v-bind:key="ballIndex"
         ></div>
@@ -87,6 +103,7 @@ export default {
       <div class="game_ball_rail_4">
         <div
           class="game_ball"
+          :class="ball.class"
           v-for="(ball, ballIndex) in balls[3]"
           v-bind:key="ballIndex"
         ></div>
@@ -94,6 +111,7 @@ export default {
       <div class="game_ball_rail_5">
         <div
           class="game_ball"
+          :class="ball.class"
           v-for="(ball, ballIndex) in balls[4]"
           v-bind:key="ballIndex"
         ></div>
