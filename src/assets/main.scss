@@ -29,6 +29,10 @@ main{
         background-image: url("../assets/img/game_bg.png");
     }
 
+    &.game_intro_bg{
+        background-image: url("../assets/img/game_intro_bg.png");
+    }
+
     .index_title_full{
         position: absolute;
         top: 0;
@@ -263,6 +267,67 @@ main{
         z-index: 1;
     }
 
+    .intro_ball{
+        position: absolute;
+        top: 0;
+        width: calc(100% / 3);
+        height: 100%;
+        z-index: 1;
+        color: #f0bd6e;
+        text-align: center;
+
+        h1{
+            font-size: 50px;
+            font-weight: 900;
+        }
+
+        .intro_ball_img{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 350px;
+            margin: 22.5vh auto 3vh auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        &.intro_ball_1{
+            .intro_ball_img{
+                background-image: url("../assets/img/game_ball_cloud.png");
+            }
+            left: 0;
+        }
+    
+        &.intro_ball_2{
+            .intro_ball_img{
+                background-image: url("../assets/img/game_ball_wind.png");
+            }
+            left: 34%;
+        }
+    
+        &.intro_ball_3{
+            .intro_ball_img{
+                background-image: url("../assets/img/game_ball_infinite.png");
+            }
+            left: 66%;
+        }
+    }
+
+    .right_down_belt_without_slogan{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../assets/img/right_down_belt_without_slogan.png");
+        background-position: right bottom;
+        background-repeat: no-repeat;
+        background-size: 80%;
+        z-index: 3;
+    }
+
     .game_frame{
         position: absolute;
         top: 0;
@@ -434,10 +499,10 @@ main{
 
         @keyframes ballAnimation {
             0% {
-                transform: translateX(-10vw);
+                transform: translateX(110vw);
             }
             100% {
-                transform: translateX(110vw);
+                transform: translateX(-10vw);
             }
         }
 

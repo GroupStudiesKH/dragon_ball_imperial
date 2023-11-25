@@ -3,7 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import IntroFirstView from "../views/IntroFirstView.vue";
 import IntroSecondView from "../views/IntroSecondView.vue";
 import GameView from "../views/GameView.vue";
-
+import GameIntroView from "../views/GameIntroView.vue";
 
 
 const router = createRouter({
@@ -29,6 +29,12 @@ const router = createRouter({
       name: "game",
       component: GameView,
     },
+    {
+      path: "/game/intro",
+      name: "game_intro",
+      component: GameIntroView,
+    },
+
   ],
 });
 

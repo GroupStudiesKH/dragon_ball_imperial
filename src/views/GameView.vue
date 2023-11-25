@@ -59,7 +59,7 @@ export default {
         if (Object.keys(scoreBall.value).length === 8) {
           //after 1 second, go to next page
           setTimeout(() => {
-            router.push({ name: "intro_1" });
+            router.push({ name: "game_intro" });
           }, 1000);
         }
       }
