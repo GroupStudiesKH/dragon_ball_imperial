@@ -323,6 +323,23 @@ main{
             //animate from top to bottom and disappear
             animation: ballAnimation 8s linear forwards;
 
+            &.clicked{
+                animation-play-state: paused;
+            }
+
+            @keyframes clickAnimation {
+                // and stop at transformed state
+                0% {
+                    background-size: 100%;
+                }
+                50% {
+                    background-size: 90%;
+                }
+                100% {
+                    background-size: 100%;
+                }
+            }
+
             &.wind_ball{
                 background-image: url("../assets/img/game_ball_wind.png");
             }
@@ -348,6 +365,44 @@ main{
                 -2px 2px 3px #f0bd6e,
                 -2px -2px 0 #f0bd6e,
                 2px -2px 0 #f0bd6e;
+                animation: textAnimation .1s linear forwards;
+
+                @keyframes textAnimation {
+                    0% {
+                        transform: translateX(-110px);
+                        opacity: 0;
+                    }
+                    100% {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .game_ball_star{
+                position: absolute;
+                left: -50px;
+                top: -50px;
+                width: 150px;
+                height: 200px;
+                background-image: url("../assets/img/game_ball_star.png");
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain;
+
+                //animate scale from 0 to 1, and fade in
+                animation: starAnimation .1s linear forwards;
+            }
+
+            @keyframes starAnimation {
+                0% {
+                    transform: scale(0.5);
+                    opacity: 0;
+                }
+                100% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
             }
         }
 

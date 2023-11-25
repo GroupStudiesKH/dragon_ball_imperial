@@ -7,7 +7,8 @@ export default {
     const router = useRouter();
     const countdown = ref(4);
     const balls = ref([{}, {}, {}, {}, {}]);
-    const scoreBall = ref([]);
+    const scoreBall = ref({});
+    const clickedBall = ref([]);
 
     const createBalls = () => {
       const ballCount = balls.value.length;
@@ -43,24 +44,29 @@ export default {
     };
 
     const clickBall = (rail, ballKey) => {
+      clickedBall.value.push(ballKey);
+      let delSec = 300;
       if (
         ["wind_ball", "cloud_ball", "infinite_ball"].includes(
           balls.value[rail][ballKey]["class"]
         )
       ) {
-        {
-          scoreBall.value.push(balls.value[rail][ballKey]["class"]);
+        delSec = 1000;
+        scoreBall.value[ballKey] = {
+          class: balls.value[rail][ballKey]["class"],
+        };
 
-          if (scoreBall.value.length == 8) {
-            //after 1 second, go to next page
-            setTimeout(() => {
-              router.push({ name: "intro_1" });
-            }, 1000);
-          }
+        if (Object.keys(scoreBall.value).length === 8) {
+          //after 1 second, go to next page
+          setTimeout(() => {
+            router.push({ name: "intro_1" });
+          }, 1000);
         }
       }
 
-      delete balls.value[rail][ballKey];
+      setTimeout(() => {
+        delete balls.value[rail][ballKey];
+      }, delSec);
     };
 
     //countdown onmounted
@@ -86,6 +92,7 @@ export default {
       balls,
       clickBall,
       scoreBall,
+      clickedBall,
     };
   },
 };
@@ -96,7 +103,7 @@ export default {
     <div class="game_header">
       <div
         class="game_score_ball"
-        :class="score"
+        :class="score.class"
         v-for="(score, scoreIndex) in scoreBall"
         v-bind:key="scoreIndex"
       ></div>
@@ -106,13 +113,31 @@ export default {
       <div class="game_ball_rail_1">
         <div
           class="game_ball"
-          :class="ball.class"
+          :class="
+            clickedBall.includes(ballIndex)
+              ? `clicked ${ball.class}`
+              : ball.class
+          "
           v-for="(ball, ballIndex) in balls[0]"
           v-bind:key="ballIndex"
           @click="clickBall(0, ballIndex)"
         >
-          <div class="game_ball_star"></div>
-          <div class="game_ball_text">
+          <div
+            class="game_ball_star"
+            v-if="
+              ['wind_ball', 'cloud_ball', 'infinite_ball'].includes(
+                ball.class
+              ) && scoreBall.hasOwnProperty(ballIndex)
+            "
+          ></div>
+          <div
+            class="game_ball_text"
+            v-if="
+              ['wind_ball', 'cloud_ball', 'infinite_ball'].includes(
+                ball.class
+              ) && scoreBall.hasOwnProperty(ballIndex)
+            "
+          >
             {{ ball.class == "wind_ball" ? "風生水起" : "" }}
             {{ ball.class == "cloud_ball" ? "祥雲獻瑞" : "" }}
             {{ ball.class == "infinite_ball" ? "無限發財" : "" }}
@@ -122,13 +147,31 @@ export default {
       <div class="game_ball_rail_2">
         <div
           class="game_ball"
-          :class="ball.class"
+          :class="
+            clickedBall.includes(ballIndex)
+              ? `clicked ${ball.class}`
+              : ball.class
+          "
           v-for="(ball, ballIndex) in balls[1]"
           v-bind:key="ballIndex"
           @click="clickBall(1, ballIndex)"
         >
-          <div class="game_ball_star"></div>
-          <div class="game_ball_text">
+          <div
+            class="game_ball_star"
+            v-if="
+              ['wind_ball', 'cloud_ball', 'infinite_ball'].includes(
+                ball.class
+              ) && scoreBall.hasOwnProperty(ballIndex)
+            "
+          ></div>
+          <div
+            class="game_ball_text"
+            v-if="
+              ['wind_ball', 'cloud_ball', 'infinite_ball'].includes(
+                ball.class
+              ) && scoreBall.hasOwnProperty(ballIndex)
+            "
+          >
             {{ ball.class == "wind_ball" ? "風生水起" : "" }}
             {{ ball.class == "cloud_ball" ? "祥雲獻瑞" : "" }}
             {{ ball.class == "infinite_ball" ? "無限發財" : "" }}
@@ -138,13 +181,31 @@ export default {
       <div class="game_ball_rail_3">
         <div
           class="game_ball"
-          :class="ball.class"
+          :class="
+            clickedBall.includes(ballIndex)
+              ? `clicked ${ball.class}`
+              : ball.class
+          "
           v-for="(ball, ballIndex) in balls[2]"
           v-bind:key="ballIndex"
           @click="clickBall(2, ballIndex)"
         >
-          <div class="game_ball_star"></div>
-          <div class="game_ball_text">
+          <div
+            class="game_ball_star"
+            v-if="
+              ['wind_ball', 'cloud_ball', 'infinite_ball'].includes(
+                ball.class
+              ) && scoreBall.hasOwnProperty(ballIndex)
+            "
+          ></div>
+          <div
+            class="game_ball_text"
+            v-if="
+              ['wind_ball', 'cloud_ball', 'infinite_ball'].includes(
+                ball.class
+              ) && scoreBall.hasOwnProperty(ballIndex)
+            "
+          >
             {{ ball.class == "wind_ball" ? "風生水起" : "" }}
             {{ ball.class == "cloud_ball" ? "祥雲獻瑞" : "" }}
             {{ ball.class == "infinite_ball" ? "無限發財" : "" }}
@@ -154,13 +215,31 @@ export default {
       <div class="game_ball_rail_4">
         <div
           class="game_ball"
-          :class="ball.class"
+          :class="
+            clickedBall.includes(ballIndex)
+              ? `clicked ${ball.class}`
+              : ball.class
+          "
           v-for="(ball, ballIndex) in balls[3]"
           v-bind:key="ballIndex"
           @click="clickBall(3, ballIndex)"
         >
-          <div class="game_ball_star"></div>
-          <div class="game_ball_text">
+          <div
+            class="game_ball_star"
+            v-if="
+              ['wind_ball', 'cloud_ball', 'infinite_ball'].includes(
+                ball.class
+              ) && scoreBall.hasOwnProperty(ballIndex)
+            "
+          ></div>
+          <div
+            class="game_ball_text"
+            v-if="
+              ['wind_ball', 'cloud_ball', 'infinite_ball'].includes(
+                ball.class
+              ) && scoreBall.hasOwnProperty(ballIndex)
+            "
+          >
             {{ ball.class == "wind_ball" ? "風生水起" : "" }}
             {{ ball.class == "cloud_ball" ? "祥雲獻瑞" : "" }}
             {{ ball.class == "infinite_ball" ? "無限發財" : "" }}
@@ -170,13 +249,31 @@ export default {
       <div class="game_ball_rail_5">
         <div
           class="game_ball"
-          :class="ball.class"
+          :class="
+            clickedBall.includes(ballIndex)
+              ? `clicked ${ball.class}`
+              : ball.class
+          "
           v-for="(ball, ballIndex) in balls[4]"
           v-bind:key="ballIndex"
           @click="clickBall(4, ballIndex)"
         >
-          <div class="game_ball_star"></div>
-          <div class="game_ball_text">
+          <div
+            class="game_ball_star"
+            v-if="
+              ['wind_ball', 'cloud_ball', 'infinite_ball'].includes(
+                ball.class
+              ) && scoreBall.hasOwnProperty(ballIndex)
+            "
+          ></div>
+          <div
+            class="game_ball_text"
+            v-if="
+              ['wind_ball', 'cloud_ball', 'infinite_ball'].includes(
+                ball.class
+              ) && scoreBall.hasOwnProperty(ballIndex)
+            "
+          >
             {{ ball.class == "wind_ball" ? "風生水起" : "" }}
             {{ ball.class == "cloud_ball" ? "祥雲獻瑞" : "" }}
             {{ ball.class == "infinite_ball" ? "無限發財" : "" }}
