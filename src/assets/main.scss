@@ -234,6 +234,19 @@ main{
         z-index: 1;
     }
 
+    .game_frame{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../assets/img/game_frame.png");
+        background-position: bottom 18% center;
+        background-repeat: no-repeat;
+        background-size: 95%;
+        z-index: 3;
+    }
+
     @keyframes floatAnimation {
         0% {
             transform: translateY(0) rotate(0deg);

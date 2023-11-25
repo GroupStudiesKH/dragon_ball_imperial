@@ -33,6 +33,7 @@ export default {
 <template>
   <main class="game_bg">
     <div class="game_header"></div>
+    <div class="game_frame"></div>
     <div class="game_dragon"></div>
     <div class="countdown countdown_3" v-if="countdown == 3"></div>
     <div class="countdown countdown_2" v-if="countdown == 2"></div>
