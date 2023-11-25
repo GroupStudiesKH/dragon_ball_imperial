@@ -11,9 +11,25 @@ export default {
     const createBalls = () => {
       const ballCount = balls.value.length;
       const rail = Math.floor(Math.random() * ballCount);
+      const ballTypeNum = Math.floor(Math.random() * 10);
+      let ballType = "normal";
+    //   switch (ballTypeNum) {
+    //     case 1:
+
+    //         break;
+      
+    //     default:
+    //         ballType = "normal";
+    //         break;
+    //   }
+
       balls.value[rail].push({
-        top: 0
+        type: ballType
       });
+    };
+
+    const clickBall = (rail, ballIndex) => {
+      balls.value[rail].splice(ballIndex, 1);
     };
 
     //countdown onmounted
@@ -23,9 +39,9 @@ export default {
         if (countdown.value === 0) {
           clearInterval(timer);
 
-            // setInterval(() => {
-            //     createBalls();
-            // }, 1000);
+            setInterval(() => {
+                createBalls();
+            }, 1000);
         }
       }, 1000);
     });
