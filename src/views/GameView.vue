@@ -25,7 +25,7 @@ export default {
           break;
 
         case 3:
-          ballTypeClass = "fire_ball";
+          ballTypeClass = "infinite_ball";
           break;
 
         default:
@@ -43,20 +43,24 @@ export default {
     };
 
     const clickBall = (rail, ballKey) => {
+      if (
+        ["wind_ball", "cloud_ball", "infinite_ball"].includes(
+          balls.value[rail][ballKey]["class"]
+        )
+      ) {
+        {
+          scoreBall.value.push(balls.value[rail][ballKey]["class"]);
 
-        if(['wind_ball', 'cloud_ball', 'fire_ball'].includes(balls.value[rail][ballKey]['class'])){{
-            scoreBall.value.push(balls.value[rail][ballKey]['class']);
+          if (scoreBall.value.length == 8) {
+            //after 1 second, go to next page
+            setTimeout(() => {
+              router.push({ name: "intro_1" });
+            }, 1000);
+          }
+        }
+      }
 
-            if(scoreBall.value.length == 8){
-                
-                //after 1 second, go to next page
-                setTimeout(() => {
-                    router.push({ name: "intro_1" });
-                }, 1000);
-            }
-        }}
-
-        delete balls.value[rail][ballKey];
+      delete balls.value[rail][ballKey];
     };
 
     //countdown onmounted
@@ -67,7 +71,7 @@ export default {
           clearInterval(timer);
 
           setInterval(() => {
-              createBalls();
+            createBalls();
           }, 1000);
         }
       }, 1000);
@@ -81,7 +85,7 @@ export default {
       countdown,
       balls,
       clickBall,
-      scoreBall
+      scoreBall,
     };
   },
 };
@@ -90,7 +94,12 @@ export default {
 <template>
   <main class="game_bg">
     <div class="game_header">
-        <div class="game_score_ball" :class="score" v-for="(score, scoreIndex) in scoreBall" v-bind:key="scoreIndex"></div>
+      <div
+        class="game_score_ball"
+        :class="score"
+        v-for="(score, scoreIndex) in scoreBall"
+        v-bind:key="scoreIndex"
+      ></div>
     </div>
     <div class="game_frame"></div>
     <div class="game_ball_rails">
@@ -101,7 +110,14 @@ export default {
           v-for="(ball, ballIndex) in balls[0]"
           v-bind:key="ballIndex"
           @click="clickBall(0, ballIndex)"
-        ></div>
+        >
+          <div class="game_ball_star"></div>
+          <div class="game_ball_text">
+            {{ ball.class == "wind_ball" ? "風生水起" : "" }}
+            {{ ball.class == "cloud_ball" ? "祥雲獻瑞" : "" }}
+            {{ ball.class == "infinite_ball" ? "無限發財" : "" }}
+          </div>
+        </div>
       </div>
       <div class="game_ball_rail_2">
         <div
@@ -110,7 +126,14 @@ export default {
           v-for="(ball, ballIndex) in balls[1]"
           v-bind:key="ballIndex"
           @click="clickBall(1, ballIndex)"
-        ></div>
+        >
+          <div class="game_ball_star"></div>
+          <div class="game_ball_text">
+            {{ ball.class == "wind_ball" ? "風生水起" : "" }}
+            {{ ball.class == "cloud_ball" ? "祥雲獻瑞" : "" }}
+            {{ ball.class == "infinite_ball" ? "無限發財" : "" }}
+          </div>
+        </div>
       </div>
       <div class="game_ball_rail_3">
         <div
@@ -119,7 +142,14 @@ export default {
           v-for="(ball, ballIndex) in balls[2]"
           v-bind:key="ballIndex"
           @click="clickBall(2, ballIndex)"
-        ></div>
+        >
+          <div class="game_ball_star"></div>
+          <div class="game_ball_text">
+            {{ ball.class == "wind_ball" ? "風生水起" : "" }}
+            {{ ball.class == "cloud_ball" ? "祥雲獻瑞" : "" }}
+            {{ ball.class == "infinite_ball" ? "無限發財" : "" }}
+          </div>
+        </div>
       </div>
       <div class="game_ball_rail_4">
         <div
@@ -128,7 +158,14 @@ export default {
           v-for="(ball, ballIndex) in balls[3]"
           v-bind:key="ballIndex"
           @click="clickBall(3, ballIndex)"
-        ></div>
+        >
+          <div class="game_ball_star"></div>
+          <div class="game_ball_text">
+            {{ ball.class == "wind_ball" ? "風生水起" : "" }}
+            {{ ball.class == "cloud_ball" ? "祥雲獻瑞" : "" }}
+            {{ ball.class == "infinite_ball" ? "無限發財" : "" }}
+          </div>
+        </div>
       </div>
       <div class="game_ball_rail_5">
         <div
@@ -137,7 +174,14 @@ export default {
           v-for="(ball, ballIndex) in balls[4]"
           v-bind:key="ballIndex"
           @click="clickBall(4, ballIndex)"
-        ></div>
+        >
+          <div class="game_ball_star"></div>
+          <div class="game_ball_text">
+            {{ ball.class == "wind_ball" ? "風生水起" : "" }}
+            {{ ball.class == "cloud_ball" ? "祥雲獻瑞" : "" }}
+            {{ ball.class == "infinite_ball" ? "無限發財" : "" }}
+          </div>
+        </div>
       </div>
     </div>
     <div class="game_dragon"></div>

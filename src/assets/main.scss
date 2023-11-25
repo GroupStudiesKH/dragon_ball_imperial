@@ -334,6 +334,21 @@ main{
             &.infinite_ball{
                 background-image: url("../assets/img/game_ball_infinite.png");
             }
+
+            .game_ball_text{
+                position: absolute;
+                left: 110px;
+                width: 200px;
+                color: #dc000c;
+                font-size: 30px;
+                font-weight: 900;
+                line-height: calc(100px - 15px);
+                text-shadow:
+                2px 2px 3px #f0bd6e,
+                -2px 2px 3px #f0bd6e,
+                -2px -2px 0 #f0bd6e,
+                2px -2px 0 #f0bd6e;
+            }
         }
 
         @keyframes ballAnimation {
