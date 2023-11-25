@@ -53,6 +53,35 @@ main{
         background-repeat: no-repeat;
         background-size: contain;
         z-index: 2;
+
+        .game_score_ball{
+            position: relative;
+            width: 5vw;
+            height: 5vw;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 1;
+            margin: 4vh 0.5vw;
+            top:0;
+            display: inline-block;
+
+            &:first-child{
+                margin-left: 3.2vw;
+            }
+
+            &.wind_ball{
+                background-image: url("../assets/img/game_ball_wind.png");
+            }
+
+            &.cloud_ball{
+                background-image: url("../assets/img/game_ball_cloud.png");
+            }
+
+            &.infinite_ball{
+                background-image: url("../assets/img/game_ball_infinite.png");
+            }
+        }
     }
 
     .left_top_logo{

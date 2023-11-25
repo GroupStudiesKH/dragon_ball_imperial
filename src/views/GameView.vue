@@ -7,6 +7,7 @@ export default {
     const router = useRouter();
     const countdown = ref(4);
     const balls = ref([{}, {}, {}, {}, {}]);
+    const scoreBall = ref([]);
 
     const createBalls = () => {
       const ballCount = balls.value.length;
@@ -42,6 +43,19 @@ export default {
     };
 
     const clickBall = (rail, ballKey) => {
+
+        if(['wind_ball', 'cloud_ball', 'fire_ball'].includes(balls.value[rail][ballKey]['class'])){{
+            scoreBall.value.push(balls.value[rail][ballKey]['class']);
+
+            if(scoreBall.value.length == 8){
+                
+                //after 1 second, go to next page
+                setTimeout(() => {
+                    router.push({ name: "intro_1" });
+                }, 1000);
+            }
+        }}
+
         delete balls.value[rail][ballKey];
     };
 
@@ -66,7 +80,8 @@ export default {
       toNextPage,
       countdown,
       balls,
-      clickBall
+      clickBall,
+      scoreBall
     };
   },
 };
@@ -74,7 +89,9 @@ export default {
 
 <template>
   <main class="game_bg">
-    <div class="game_header"></div>
+    <div class="game_header">
+        <div class="game_score_ball" :class="score" v-for="(score, scoreIndex) in scoreBall" v-bind:key="scoreIndex"></div>
+    </div>
     <div class="game_frame"></div>
     <div class="game_ball_rails">
       <div class="game_ball_rail_1">
