@@ -52,7 +52,7 @@ main{
         background-position: top center;
         background-repeat: no-repeat;
         background-size: contain;
-        z-index: 2;
+        z-index: 9999999;
     }
 
     .left_top_logo{
@@ -271,6 +271,85 @@ main{
         background-size: 200%;
         z-index: 1;
         animation: floatAnimation 6s infinite;
+    }
+
+    .game_ball_rails{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        overflow: hidden;
+
+        .game_ball{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-image: url("../assets/img/game_ball.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 1;
+            //animate from top to bottom and disappear
+            animation: ballAnimation 30s forwards;
+
+            &.wind_ball{
+                background-image: url("../assets/img/game_ball_wind.png");
+            }
+
+            &.cloud_ball{
+                background-image: url("../assets/img/game_ball_cloud.png");
+            }
+
+            &.infinite_ball{
+                background-image: url("../assets/img/game_ball_infinite.png");
+            }
+        }
+
+        @keyframes ballAnimation {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(110vh);
+            }
+        }
+
+        .game_ball_rail_1{
+            height: 100%;
+            width: 10%;
+            left: 5%;
+            position: absolute;
+        }
+
+        .game_ball_rail_2{
+            height: 100%;
+            width: 10%;
+            left: 25%;
+            position: absolute;
+        }
+
+        .game_ball_rail_3{
+            height: 100%;
+            width: 10%;
+            left: 45%;
+            position: absolute;
+        }
+
+        .game_ball_rail_4{
+            height: 100%;
+            width: 10%;
+            left: 65%;
+            position: absolute;
+        }
+
+        .game_ball_rail_5{
+            height: 100%;
+            width: 10%;
+            left: 85%;
+            position: absolute;
+        }
     }
 
     .countdown{
