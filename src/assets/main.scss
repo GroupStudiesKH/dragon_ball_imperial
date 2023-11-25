@@ -378,10 +378,10 @@ main{
             left: 0;
             width: 80%;
             height: 350px;
-            margin: 22.5vh auto 3vh auto;
+            margin: 22.5vh auto 0 auto;
             background-position: center center;
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: contain;
         }
 
         &.intro_ball_1{
