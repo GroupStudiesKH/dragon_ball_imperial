@@ -144,6 +144,76 @@ main{
         z-index: 1;
     }
 
+    .charm_ball{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 11vw;
+        height: 11vw;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover, 188%;
+        z-index: 1;
+
+        &.charm_ball_cloud{
+            top: 40vh;
+            left: 3vw;
+            background-image: url("../assets/img/game_ball_cloud.png"), url("../assets/img/game_ball_shadow.png");
+            animation: floatAnimationCloud 6s infinite;
+        }
+
+        &.charm_ball_wind{
+            top: 70vh;
+            left: 45vw;
+            background-image: url("../assets/img/game_ball_wind.png"), url("../assets/img/game_ball_shadow.png");
+            animation: floatAnimationWind 10s infinite;
+        }
+
+        &.charm_ball_infinite{
+            top: 10vh;
+            left: 45vw;
+            background-image: url("../assets/img/game_ball_infinite.png"), url("../assets/img/game_ball_shadow.png");
+            animation: floatAnimationInfinite 8s infinite;
+
+        }
+
+        @keyframes floatAnimationCloud {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(-3deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        @keyframes floatAnimationInfinite {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-10px) translateX(-15px) rotate(-3deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        @keyframes floatAnimationWind {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(10px) translateX(-15px) rotate(-3deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+    }
+
     .left_down_cloud{
         position: absolute;
         bottom: 0;
