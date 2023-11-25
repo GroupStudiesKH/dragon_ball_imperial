@@ -66,6 +66,7 @@ export default {
 
       setTimeout(() => {
         delete balls.value[rail][ballKey];
+        clickedBall.value.splice(clickedBall.value.indexOf(ballKey), 1);
       }, delSec);
     };
 
@@ -113,15 +114,16 @@ export default {
       <div class="game_ball_rail_1">
         <div
           class="game_ball"
-          :class="
-            clickedBall.includes(ballIndex)
-              ? `clicked ${ball.class}`
-              : ball.class
-          "
+          :class="clickedBall.includes(ballIndex) ? `clicked` : ``"
           v-for="(ball, ballIndex) in balls[0]"
           v-bind:key="ballIndex"
           @click="clickBall(0, ballIndex)"
         >
+          <div
+            class="game_ball_light"
+            v-if="clickedBall.includes(ballIndex)"
+          ></div>
+          <div class="ball_container" :class="ball.class"></div>
           <div
             class="game_ball_star"
             v-if="
@@ -147,15 +149,16 @@ export default {
       <div class="game_ball_rail_2">
         <div
           class="game_ball"
-          :class="
-            clickedBall.includes(ballIndex)
-              ? `clicked ${ball.class}`
-              : ball.class
-          "
+          :class="clickedBall.includes(ballIndex) ? `clicked` : ``"
           v-for="(ball, ballIndex) in balls[1]"
           v-bind:key="ballIndex"
           @click="clickBall(1, ballIndex)"
         >
+          <div class="ball_container" :class="ball.class"></div>
+          <div
+            class="game_ball_light"
+            v-if="clickedBall.includes(ballIndex)"
+          ></div>
           <div
             class="game_ball_star"
             v-if="
@@ -181,15 +184,17 @@ export default {
       <div class="game_ball_rail_3">
         <div
           class="game_ball"
-          :class="
-            clickedBall.includes(ballIndex)
-              ? `clicked ${ball.class}`
-              : ball.class
-          "
+          :class="clickedBall.includes(ballIndex) ? `clicked` : ``"
           v-for="(ball, ballIndex) in balls[2]"
           v-bind:key="ballIndex"
           @click="clickBall(2, ballIndex)"
         >
+          <div class="ball_container" :class="ball.class"></div>
+
+          <div
+            class="game_ball_light"
+            v-if="clickedBall.includes(ballIndex)"
+          ></div>
           <div
             class="game_ball_star"
             v-if="
@@ -215,15 +220,17 @@ export default {
       <div class="game_ball_rail_4">
         <div
           class="game_ball"
-          :class="
-            clickedBall.includes(ballIndex)
-              ? `clicked ${ball.class}`
-              : ball.class
-          "
+          :class="clickedBall.includes(ballIndex) ? `clicked` : ``"
           v-for="(ball, ballIndex) in balls[3]"
           v-bind:key="ballIndex"
           @click="clickBall(3, ballIndex)"
         >
+          <div class="ball_container" :class="ball.class"></div>
+
+          <div
+            class="game_ball_light"
+            v-if="clickedBall.includes(ballIndex)"
+          ></div>
           <div
             class="game_ball_star"
             v-if="
@@ -249,15 +256,17 @@ export default {
       <div class="game_ball_rail_5">
         <div
           class="game_ball"
-          :class="
-            clickedBall.includes(ballIndex)
-              ? `clicked ${ball.class}`
-              : ball.class
-          "
+          :class="clickedBall.includes(ballIndex) ? `clicked` : ``"
           v-for="(ball, ballIndex) in balls[4]"
           v-bind:key="ballIndex"
           @click="clickBall(4, ballIndex)"
         >
+          <div class="ball_container" :class="ball.class"></div>
+
+          <div
+            class="game_ball_light"
+            v-if="clickedBall.includes(ballIndex)"
+          ></div>
           <div
             class="game_ball_star"
             v-if="

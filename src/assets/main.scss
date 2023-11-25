@@ -315,41 +315,53 @@ main{
             position: absolute;
             width: 100px;
             height: 100px;
-            background-image: url("../assets/img/game_ball.png");
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
             z-index: 1;
             //animate from top to bottom and disappear
             animation: ballAnimation 8s linear forwards;
 
             &.clicked{
                 animation-play-state: paused;
+                // animation: clickAnimation .5s linear forwards;
+                .ball_container{
+                    animation: clickAnimation .2s linear forwards;
+                }
+            }
+
+            .ball_container{
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                top: 0;
+                left: 0;
+                background-image: url("../assets/img/game_ball.png");
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                &.wind_ball{
+                    background-image: url("../assets/img/game_ball_wind.png");
+                }
+    
+                &.cloud_ball{
+                    background-image: url("../assets/img/game_ball_cloud.png");
+                }
+    
+                &.infinite_ball{
+                    background-image: url("../assets/img/game_ball_infinite.png");
+                }
             }
 
             @keyframes clickAnimation {
                 // and stop at transformed state
                 0% {
-                    background-size: 100%;
+                    transform: scale(1);
                 }
                 50% {
-                    background-size: 90%;
+                    transform: scale(0.8);
                 }
                 100% {
-                    background-size: 100%;
+                    transform: scale(1);
                 }
-            }
-
-            &.wind_ball{
-                background-image: url("../assets/img/game_ball_wind.png");
-            }
-
-            &.cloud_ball{
-                background-image: url("../assets/img/game_ball_cloud.png");
-            }
-
-            &.infinite_ball{
-                background-image: url("../assets/img/game_ball_infinite.png");
             }
 
             .game_ball_text{
@@ -377,6 +389,20 @@ main{
                         opacity: 1;
                     }
                 }
+            }
+
+            .game_ball_light{
+                position: absolute;
+                left: -50px;
+                top: -50px;
+                width: 200px;
+                height: 200px;
+                background-image: url("../assets/img/ball_light.png");
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                z-index: -1;
+                opacity: 0.3;
             }
 
             .game_ball_star{
