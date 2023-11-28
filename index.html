@@ -15,11 +15,82 @@
   <link rel="mask-icon" href="/pwa-logo.png">
 
   <link rel="manifest" href="/public/img/icons/manifest.json">
+
+  <style>
+    #audioSwitch {
+      position: fixed;
+      bottom: 70px;
+      left: 20px;
+      color: #ccc;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 10;
+      opacity: 0.8;
+    }
+
+    #audioSwitch div {
+      width: 20px;
+      height: 20px;
+      background-image: url('/audio-speaker-off.png');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #audioSwitch div.fa-volume-high {
+      background-image: url('/audio-speaker-on.png');
+    }
+  </style>
 </head>
 
 <body>
   <div id="app"></div>
   <script type="module" src="/src/main.js"></script>
+
+  <div class="btn" id="audioSwitch">
+    <div class="fa-volume-xmark"></div>
+  </div>
+  <audio id="bgMusic" loop autoplay>
+    <source src="/bg.mp3?time=202311271404" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
 </body>
+<script>
+  var bgMusic = document.getElementById("bgMusic");
+  let right_top_play_button = document.querySelector('.right_top_play_button');
+
+  function playBackgroundMusic() {
+    bgMusic.play();
+    bgMusic.muted = false
+    audioSwitch.innerHTML = '<div class="fa-volume-high"></div>';
+    sessionStorage.setItem('musicEnabled', 'true');
+  }
+
+  function stopBackgroundMusic(musicEnabled = false) {
+    bgMusic.muted = true
+    audioSwitch.innerHTML = '<div class="fa-volume-xmark"></div>';
+    sessionStorage.setItem('musicEnabled', musicEnabled);
+  }
+
+  var audioSwitch = document.getElementById("audioSwitch");
+
+  audioSwitch.addEventListener("click", function () {
+    if (bgMusic.muted) {
+      playBackgroundMusic()
+    } else {
+      stopBackgroundMusic()
+    }
+  });
+
+  // when document.hidden = true pause music
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      stopBackgroundMusic();
+    }
+  });
+
+</script>
 
 </html>
