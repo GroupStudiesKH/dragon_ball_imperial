@@ -94,4 +94,22 @@
 
 </script>
 
+<script>
+  self.addEventListener('install', event => self.skipWaiting());
+
+  self.addEventListener('activate', event => {
+
+    // 删除所有 Service Worker 缓存
+    caches.keys().then(cacheNames => {for (let name of cacheNames) {caches.delete(name);}});
+
+    // 卸载所有 Service Worker
+    self.registration.unregister()
+
+      .then(() => self.clients.matchAll())
+
+      .then((clients) => clients.forEach(client => client.navigate(client.url)))
+
+  });
+</script>
+
 </html>
