@@ -9,6 +9,7 @@ export default {
     const toNextPage = () => {
       router.push({ name: "intro_2" });
     };
+
     return {
       toNextPage
     };

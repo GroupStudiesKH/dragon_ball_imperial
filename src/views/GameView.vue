@@ -45,6 +45,13 @@ export default {
 
     const clickBall = (rail, ballKey) => {
       clickedBall.value.push(ballKey);
+
+      let musicEnable = sessionStorage.getItem("musicEnabled");
+      let clickAudio = document.getElementById("click");
+      if (musicEnable === "true") {
+        clickAudio.play();
+      }
+
       let delSec = 300;
       if (
         ["wind_ball", "cloud_ball", "infinite_ball"].includes(
@@ -74,6 +81,13 @@ export default {
     onMounted(() => {
       const timer = setInterval(() => {
         countdown.value--;
+
+        let musicEnable = sessionStorage.getItem("musicEnabled");
+        let countdownAudio = document.getElementById("countdownAudio");
+        if (musicEnable === "true") {
+          countdownAudio.play();
+        }
+
         if (countdown.value === 0) {
           clearInterval(timer);
 
@@ -296,5 +310,17 @@ export default {
     <div class="countdown countdown_1" v-if="countdown == 1"></div>
     <div class="left_down_cloud"></div>
     <div class="ground_wave"></div>
+
+    <audio id="countdownAudio">
+      <source src="/321.mp3?time=202311271404" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <audio id="click">
+      <source src="/click.mp3?time=202311271404" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+
   </main>
 </template>
