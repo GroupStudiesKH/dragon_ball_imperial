@@ -23,6 +23,6 @@ export default {
     <div class="right_top_play_button" @click="toNextPage()"></div>
     <div class="left_down_woman_small"></div>
     <div class="left_down_cloud"></div>
-    <div class="ground_wave"></div>
+    <div class="ground_wave intro_2"></div>
   </main>
 </template>

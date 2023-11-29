@@ -30,7 +30,7 @@ export default {
     </div>
     <div class="intro_ball intro_ball_3">
         <div class="intro_ball_img"></div>
-        <h1>無限連鎖</h1>
+        <h1>無限發財</h1>
     </div>
     <div class="right_down_belt_without_slogan"></div>
     <div class="ground_wave"></div>

@@ -29,6 +29,6 @@ export default {
     <div class="left_down_woman_full"></div>
     <div class="left_down_cloud"></div>
     <div class="dragon_right_big_full"></div>
-    <div class="ground_wave"></div>
+    <div class="ground_wave intro_1"></div>
   </main>
 </template>
