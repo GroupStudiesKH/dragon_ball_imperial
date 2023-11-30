@@ -24,7 +24,6 @@ main{
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
-    flex: 1;
 
     &.yellow_bg{
         background-image: url("../assets/img/yellow_bg.png");
@@ -44,6 +43,12 @@ main{
 
     &.final_bg{
         background-image: url("../assets/img/final_bg.png");
+
+        @media(max-height: 830px){
+            background-position: top right;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
     }
 
     .index_title_full{
@@ -134,7 +139,7 @@ main{
         width: 100%;
         height: 100%;
         background-image: url("../assets/img/main_product_full.png");
-        background-position: top 80px center;
+        background-position: top 30px center;
         background-repeat: no-repeat;
         background-size: cover;
         z-index: 1;
@@ -383,13 +388,14 @@ main{
         h1{
             font-size: 50px;
             font-weight: 900;
+            margin-top: -20px;
         }
 
         .intro_ball_img{
             position: relative;
             top: 0;
             left: 0;
-            width: 80%;
+            width: 100%;
             height: 350px;
             margin: 19.5vh auto 0 auto;
             background-position: center center;
@@ -439,9 +445,9 @@ main{
         width: 100%;
         height: 100%;
         background-image: url("../assets/img/game_frame.png");
-        background-position: bottom 18% center;
+        background-position: bottom 6% center;
         background-repeat: no-repeat;
-        background-size: 95%;
+        background-size: 93%;
         z-index: 4;
     }
 
