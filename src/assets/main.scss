@@ -42,13 +42,10 @@ main{
     }
 
     &.final_bg{
-        background-image: url("../assets/img/final_bg.png");
-
-        @media(max-height: 830px){
-            background-position: top right;
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
+        background-image: url("../assets/img/final_bg.png"), url("../assets/img/final_bg_belt.png"), url("../assets/img/final_bg_red_belt.png");
+        background-position: top center, bottom center, bottom right;
+        background-repeat: no-repeat;
+        background-size: contain, 100%, 70%;    
     }
 
     .index_title_full{
@@ -162,30 +159,30 @@ main{
         position: absolute;
         top: 0;
         left: 0;
-        width: 11vw;
-        height: 11vw;
+        width: 12vw;
+        height: 12vw;
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover, 188%;
         z-index: 1;
 
         &.charm_ball_cloud{
-            top: 40vh;
+            top: 30vh;
             left: 3vw;
             background-image: url("../assets/img/game_ball_cloud.png"), url("../assets/img/game_ball_shadow.png");
             animation: floatAnimationCloud 6s infinite;
         }
 
         &.charm_ball_wind{
-            top: 67vh;
-            left: 43vw;
+            top: 65vh;
+            left: 46vw;
             background-image: url("../assets/img/game_ball_wind.png"), url("../assets/img/game_ball_shadow.png");
             animation: floatAnimationWind 10s infinite;
         }
 
         &.charm_ball_infinite{
-            top: 10vh;
-            left: 45vw;
+            top: 15vh;
+            left: 47vw;
             background-image: url("../assets/img/game_ball_infinite.png"), url("../assets/img/game_ball_shadow.png");
             animation: floatAnimationInfinite 8s infinite;
 
@@ -232,8 +229,8 @@ main{
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 50%;
-        height: 40%;
+        width: 40%;
+        height: 35%;
         background-image: url("../assets/img/left_down_cloud.png");
         background-position: center center;
         background-repeat: no-repeat;
@@ -357,10 +354,14 @@ main{
         width: 100%;
         height: 100%;
         background-image: url("../assets/img/intro_2_main.png");
-        background-position: top 50px left -10px;
+        background-position: top left -10px;
         background-repeat: no-repeat;
         background-size: cover;
         z-index: 1;
+
+        @media(min-height: 830px){
+            background-position: top 50px left -10px;
+        }
     }
 
     .intro_2_main_title{
@@ -370,10 +371,14 @@ main{
         width: 100%;
         height: 100%;
         background-image: url("../assets/img/intro_2_title.png");
-        background-position: center center;
+        background-position: top center;
         background-repeat: no-repeat;
         background-size: cover;
         z-index: 1;
+
+        @media(max-height: 830px){
+            background-position: top -20px center;
+        }
     }
 
     .intro_ball{
