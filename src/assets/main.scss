@@ -454,14 +454,14 @@ main{
 
     .game_dragon {
         position: absolute;
-        top: 30%;
+        top: 25%;
         left: 0;
-        width: 40%;
-        height: 30%;
+        width: 50%;
+        height: 40%;
         background-image: url("../assets/img/side_dragon.png");
         background-position: center left;
         background-repeat: no-repeat;
-        background-size: 200%;
+        background-size: 175%;
         z-index: 1;
         animation: floatAnimation 6s infinite;
     }
