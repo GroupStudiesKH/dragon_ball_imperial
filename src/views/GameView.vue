@@ -321,6 +321,7 @@ export default {
       Your browser does not support the audio element.
     </audio>
 
+    <div id="noticeHint" class="gold">僅供帝國菸草集團銷售通路內部使用，請勿置於消費者可取得之處或張貼門市</div>
 
   </main>
 </template>

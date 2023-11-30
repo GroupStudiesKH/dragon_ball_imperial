@@ -25,4 +25,6 @@ export default {
     <div class="left_down_cloud"></div>
     <div class="ground_wave intro_2"></div>
   </main>
+      <div id="noticeHint" class="gold">僅供帝國菸草集團銷售通路內部使用，請勿置於消費者可取得之處或張貼門市</div>
+
 </template>

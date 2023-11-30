@@ -42,7 +42,7 @@
       background-image: url('/audio-speaker-on.png');
     }
 
-    #noticeHint{
+    #noticeHint {
       position: fixed;
       bottom: 10px;
       width: 100%;
@@ -51,8 +51,16 @@
       z-index: 10;
       font-weight: 900;
     }
+
+    #noticeHint.gold {
+      color: #fff;
+      text-shadow: -1px 1px 0 #c2a45b,
+        1px 1px 0 #c2a45b,
+        1px -1px 0 #c2a45b,
+        -1px -1px 0 #c2a45b;
+    }
   </style>
-  <script type="module" crossorigin src="/assets/index-60319aa1.js"></script>
+  <script type="module" crossorigin src="/assets/index-89f98a8d.js"></script>
   <link rel="stylesheet" href="/assets/index-e0ca7d98.css">
 <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
 
@@ -67,8 +75,6 @@
     <source src="/bg.mp3?time=202311271404" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-  <div id="noticeHint">僅供帝國菸草集團銷售通路內部使用，請勿置於消費者可取得之處或張貼門市</div>
-
 </body>
 <script>
   var bgMusic = document.getElementById("bgMusic");
@@ -103,8 +109,6 @@
       stopBackgroundMusic()
     }
   });
-
-
 </script>
 
 <script>
