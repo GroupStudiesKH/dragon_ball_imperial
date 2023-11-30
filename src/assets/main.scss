@@ -22,6 +22,8 @@ main{
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
+    flex: 1;
+    display: flex;
 
     &.yellow_bg{
         background-image: url("../assets/img/yellow_bg.png");
