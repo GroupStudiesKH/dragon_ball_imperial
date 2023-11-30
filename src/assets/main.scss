@@ -401,18 +401,24 @@ main{
             background-position: center center;
             background-repeat: no-repeat;
             background-size: contain;
+
+            @media(max-height: 830px){
+                height: 300px;
+            }
         }
 
         &.intro_ball_1{
             .intro_ball_img{
-                background-image: url("../assets/img/game_ball_cloud.png");
+                background-image: url("../assets/img/game_ball_wind.png");
             }
             left: 0;
         }
     
         &.intro_ball_2{
+
+
             .intro_ball_img{
-                background-image: url("../assets/img/game_ball_wind.png");
+                background-image: url("../assets/img/game_ball_cloud.png");
             }
             left: 34%;
         }
