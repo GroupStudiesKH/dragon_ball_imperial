@@ -502,6 +502,7 @@ main{
             width: 100px;
             height: 100px;
             z-index: 1;
+            transform: translateX(110vw);
             //animate from top to bottom and disappear
             animation: ballAnimation 6s linear forwards;
 
