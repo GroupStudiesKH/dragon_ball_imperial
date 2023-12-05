@@ -12,7 +12,7 @@ export default defineConfig({
       registerType: 'autoUpdate', 
       includeAssets: ['/**/*.js', '/**/*.png', '/**/*.jpg', '/**/*.jpeg', '/**/*.gif', '/**/*.svg', '/**/*.mp3'],
       manifest: {
-        display: 'fullscreen',
+        display: 'standalone',
       }
     })
   ],
