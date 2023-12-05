@@ -87,6 +87,7 @@
   }
 
   function stopBackgroundMusic(musicEnabled = false) {
+    bgMusic.play();
     bgMusic.muted = true
     audioSwitch.innerHTML = '<div class="fa-volume-xmark"></div>';
     sessionStorage.setItem('musicEnabled', musicEnabled);
@@ -104,8 +105,18 @@
 
   // when document.hidden = true pause music
   document.addEventListener("visibilitychange", function () {
-    if (document.hidden) {
-      stopBackgroundMusic()
+    let musicEnabled = sessionStorage.getItem('musicEnabled');
+    if (document.hidden && musicEnabled) {
+      stopBackgroundMusic(musicEnabled)
+    }else if(!document.hidden && musicEnabled){
+      playBackgroundMusic()
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    let musicEnabled = sessionStorage.getItem('musicEnabled');
+    if (musicEnabled) {
+      playBackgroundMusic()
     }
   });
 </script>
