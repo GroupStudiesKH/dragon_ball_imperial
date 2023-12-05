@@ -503,7 +503,7 @@ main{
             height: 100px;
             z-index: 1;
             //animate from top to bottom and disappear
-            animation: ballAnimation 8s linear forwards;
+            animation: ballAnimation 6s linear forwards;
 
             &.clicked{
                 animation-play-state: paused;

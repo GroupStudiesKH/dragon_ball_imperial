@@ -14,7 +14,7 @@ export default {
       const ballCount = balls.value.length;
       const rail = Math.floor(Math.random() * ballCount);
       const ballKey = Date.now();
-      const ballTypeNum = Math.floor(Math.random() * 10);
+      const ballTypeNum = Math.floor(Math.random() * 6);
       let ballTypeClass = "";
       switch (ballTypeNum) {
         case 1:
@@ -40,7 +40,7 @@ export default {
 
       setTimeout(() => {
         delete balls.value[rail][ballKey];
-      }, 8000);
+      }, 6000);
     };
 
     const clickBall = (rail, ballKey) => {
