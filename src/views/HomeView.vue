@@ -7,9 +7,9 @@ export default {
     const router = useRouter();
 
     const toNextPage = () => {
-      playBackgroundMusic()
-      router.push({ name: "intro_1" });
+      router.push({ name: "intro_2" });
     };
+
     return {
       toNextPage
     };
@@ -17,18 +17,21 @@ export default {
 };
 </script>
 
-
 <template>
-  <main>
-    <div class="left_top_logo"></div>
+  <main class="yellow_bg">
+    <div class="intro_slogan">
+        完成收集好運8龍珠，<br>
+        就能獲得好運御守，<br>
+        讓您好運不斷<br>
+        龍年行大運！
+    </div>
+    <div class="left_top_logo_full"></div>
     <div class="right_top_play_button" @click="toNextPage()"></div>
-    <div class="index_title_full"></div>
-    <div class="main_product_full"></div>
+    <div class="left_down_woman_full"></div>
     <div class="left_down_cloud"></div>
-    <div class="right_down_belt"></div>
-    <div class="dragon_right_small"></div>
-    <div class="ground"></div>
+    <div class="dragon_right_big_full"></div>
+    <div class="ground_wave intro_1"></div>
   </main>
-    <div id="noticeHint">僅供帝國菸草集團銷售通路內部使用，請勿置於消費者可取得之處或張貼門市</div>
+      <div id="noticeHint" class="gold">僅供帝國菸草集團銷售通路內部使用，請勿置於消費者可取得之處或張貼門市</div>
 
 </template>

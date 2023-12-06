@@ -41,12 +41,12 @@ main{
         background-image: url("../assets/img/charm_bg.png");
     }
 
-    &.final_bg{
-        background-image: url("../assets/img/final_bg.png"), url("../assets/img/final_bg_belt.png"), url("../assets/img/final_bg_red_belt.png");
-        background-position: top center, bottom center, bottom right;
-        background-repeat: no-repeat;
-        background-size: contain, 100%, 70%;    
-    }
+    // &.final_bg{
+    //     background-image: url("../assets/img/final_bg.png"), url("../assets/img/final_bg_belt.png"), url("../assets/img/final_bg_red_belt.png");
+    //     background-position: top center, bottom center, bottom right;
+    //     background-repeat: no-repeat;
+    //     background-size: contain, 100%, 70%;    
+    // }
 
     .index_title_full{
         position: absolute;
