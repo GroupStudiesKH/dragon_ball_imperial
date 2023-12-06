@@ -6,11 +6,17 @@ export default {
   setup() {
     const router = useRouter();
 
+    const toLastPage = () => {
+      router.push({ name: "home" });
+    };
+
+
     const toNextPage = () => {
       router.push({ name: "game" });
     };
     return {
-      toNextPage
+      toNextPage,
+      toLastPage
     };
   },
 };
@@ -20,6 +26,7 @@ export default {
   <main class="yellow_bg">
     <div class="intro_2_main_full"></div>
     <div class="intro_2_main_title"></div>
+    <div class="left_top_previous_button" @click="toLastPage()"></div>
     <div class="right_top_play_button" @click="toNextPage()"></div>
     <div class="left_down_woman_small"></div>
     <div class="left_down_cloud"></div>

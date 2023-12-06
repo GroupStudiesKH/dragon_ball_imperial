@@ -7,7 +7,6 @@ export default {
     const router = useRouter();
 
     const toNextPage = () => {
-      playBackgroundMusic()
       router.push({ name: "home" });
     };
     return {
