@@ -143,10 +143,14 @@ main{
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
-        z-index: 10;
+        z-index: 11;
 
         &.game{
             top: 20px;
+        }
+
+        &.reload{
+            background-image: url("../assets/img/right_top_reload_button.png");
         }
     }
 
