@@ -81,12 +81,12 @@ main{
             background-repeat: no-repeat;
             background-size: cover;
             z-index: 1;
-            margin: 4vh 0.5vw;
+            margin: 3.8vh 0.5vw;
             top:0;
             display: inline-block;
 
             &:first-child{
-                margin-left: 3.2vw;
+                margin-left: 17.3vw;
             }
 
             &.wind_ball{
@@ -126,7 +126,11 @@ main{
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
-        z-index: 10;
+        z-index: 11;
+
+        &.game{
+            top: 20px;
+        }
     }
 
     .right_top_play_button{
@@ -140,6 +144,10 @@ main{
         background-repeat: no-repeat;
         background-size: cover;
         z-index: 10;
+
+        &.game{
+            top: 20px;
+        }
     }
 
     .main_product_full{

@@ -98,11 +98,18 @@ export default {
       }, 1000);
     });
 
-    const toNextPage = () => {
-      router.push({ name: "intro_1" });
+    const toLastPage = () => {
+      router.push({ name: "intro_2" });
     };
+
+    const toNextPage = () => {
+      router.push({ name: "game_intro" });
+    };
+
+
     return {
       toNextPage,
+      toLastPage,
       countdown,
       balls,
       clickBall,
@@ -123,6 +130,8 @@ export default {
         v-bind:key="scoreIndex"
       ></div>
     </div>
+    <div class="left_top_previous_button game" @click="toLastPage()"></div>
+    <div class="right_top_play_button game" @click="toNextPage()"></div>
     <div class="game_frame"></div>
     <div class="game_ball_rails">
       <div class="game_ball_rail_1">
