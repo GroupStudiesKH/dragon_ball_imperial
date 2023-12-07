@@ -14,7 +14,7 @@ export default {
       const ballCount = balls.value.length;
       const rail = Math.floor(Math.random() * ballCount);
       const ballKey = Date.now();
-      const ballTypeNum = Math.floor(Math.random() * 5);
+      const ballTypeNum = Math.floor(Math.random() * 6);
       let ballTypeClass = "";
       switch (ballTypeNum) {
         case 1:
