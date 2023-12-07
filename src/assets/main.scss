@@ -154,6 +154,36 @@ main{
         }
     }
 
+    .game_intro_title{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-image: url("../assets/img/game_intro_title.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @media(min-height: 770px){
+            top: -5%;
+        }
+    }
+
+    .game_intro_subtitle{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-image: url("../assets/img/game_intro_subtitle.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     .main_product_full{
         position: absolute;
         top: 0;
@@ -454,6 +484,9 @@ main{
             font-size: 50px;
             font-weight: 900;
             margin-top: -20px;
+            background: -webkit-linear-gradient(left, rgb(246, 239, 198), rgb(246, 239, 198), rgb(246, 239, 198), rgb(240, 217, 98), rgb(246, 239, 198), rgb(246, 239, 198), rgb(243, 239, 198));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .intro_ball_img{
