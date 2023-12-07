@@ -14,7 +14,7 @@ export default {
       const ballCount = balls.value.length;
       const rail = Math.floor(Math.random() * ballCount);
       const ballKey = Date.now();
-      const ballTypeNum = Math.floor(Math.random() * 6);
+      const ballTypeNum = Math.floor(Math.random() * 4);
       let ballTypeClass = "";
       switch (ballTypeNum) {
         case 1:
@@ -40,7 +40,7 @@ export default {
 
       setTimeout(() => {
         delete balls.value[rail][ballKey];
-      }, 6000);
+      }, 5000);
     };
 
     const clickBall = (rail, ballKey) => {
@@ -317,8 +317,8 @@ export default {
     <div class="countdown countdown_3" v-if="countdown == 3"></div>
     <div class="countdown countdown_2" v-if="countdown == 2"></div>
     <div class="countdown countdown_1" v-if="countdown == 1"></div>
-    <div class="left_down_cloud"></div>
-    <div class="ground_wave"></div>
+    <div class="left_down_cloud game"></div>
+    <div class="ground_wave game"></div>
 
     <audio id="countdownAudio">
       <source

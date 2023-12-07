@@ -261,6 +261,23 @@ main{
         background-repeat: no-repeat;
         background-size: cover;
         z-index: 3;
+
+        &.game{
+            transform: translateY(30px);
+            animation: cloudAnimation 5s infinite;
+        }
+    }
+
+    @keyframes cloudAnimation{
+        0% {
+            transform: translateY(30px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(0px) rotate(-0deg);
+        }
+        100% {
+            transform: translateY(30px) rotate(0deg);
+        }
     }
 
     .right_down_belt{
@@ -306,6 +323,24 @@ main{
 
         &.intro_2{
             z-index: 3;
+        }
+
+        &.game{
+            transform: translateX(10px);
+            animation: waveAnimation 3s infinite;
+        }
+    }
+
+    @keyframes waveAnimation {
+        // slow flow
+        0% {
+            transform: translateY(10px);
+        }
+        50% {
+            transform: translateY(0px);
+        }
+        100% {
+            transform: translateY(10px);
         }
     }
 
@@ -491,8 +526,14 @@ main{
         0% {
             transform: translateY(0) rotate(0deg);
         }
+        25% {
+            transform: translate(-50px, 10px) rotate(3deg);
+        }
         50% {
-            transform: translate(-30px, -30px) rotate(-3deg);
+            transform: translate(00px, 10px) rotate(-3deg);
+        }
+        75% {
+            transform: translate(-20px, 10px) rotate(3deg);
         }
         100% {
             transform: translateY(0) rotate(0deg);
@@ -510,7 +551,7 @@ main{
         background-repeat: no-repeat;
         background-size: 100%;
         z-index: 1;
-        animation: floatAnimation 6s infinite;
+        animation: floatAnimation 2.5s infinite  alternate forwards;
     }
 
     .game_ball_rails{
@@ -529,7 +570,7 @@ main{
             z-index: 1;
             transform: translateX(110vw);
             //animate from top to bottom and disappear
-            animation: ballAnimation 6s linear forwards;
+            animation: ballAnimation 5s linear forwards;
 
             &.clicked{
                 animation-play-state: paused;
@@ -647,6 +688,33 @@ main{
         @keyframes ballAnimation {
             0% {
                 transform: translateX(110vw);
+            }
+            10%{
+                transform: translate(90vw, -5px);
+            }
+            20%{
+                transform: translate(80vw, 5vh);
+            }
+            30%{
+                transform: translate(70vw, 0vh);
+            }
+            40%{
+                transform: translate(60vw, 5vh);
+            }
+            50%{
+                transform: translate(50vw, 0vh);
+            }
+            60%{
+                transform: translate(40vw, 5vh);
+            }
+            70%{
+                transform: translate(30vw, 0vh);
+            }
+            80%{
+                transform: translate(20vw, 5vh);
+            }
+            90%{
+                transform: translate(10vw, 0vh);
             }
             100% {
                 transform: translateX(-10vw);
