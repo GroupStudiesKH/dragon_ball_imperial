@@ -130,6 +130,7 @@ export default {
         v-bind:key="scoreIndex"
       ></div>
     </div>
+    <div class="game_cloud"></div>
     <div class="left_top_previous_button game" @click="toLastPage()"></div>
     <div class="right_top_play_button game" @click="toNextPage()"></div>
     <div class="game_frame"></div>

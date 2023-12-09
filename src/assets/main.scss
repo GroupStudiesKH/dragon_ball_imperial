@@ -8,6 +8,7 @@ html, body{
   margin: 0;
   overflow: hidden;
   height: 100%;
+  overscroll-behavior: none;
 }
 
 
@@ -24,6 +25,7 @@ main{
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 
     &.yellow_bg{
         background-image: url("../assets/img/yellow_bg.png");
@@ -513,8 +515,13 @@ main{
         &.intro_ball_1{
             .intro_ball_img{
                 background-image: url("../assets/img/game_ball_wind.png");
+                background-position: right center;
             }
             left: 0;
+            h1{
+                text-align: right;
+                padding-right: 11.5%;
+            }
         }
     
         &.intro_ball_2{
@@ -523,14 +530,19 @@ main{
             .intro_ball_img{
                 background-image: url("../assets/img/game_ball_cloud.png");
             }
-            left: 34%;
+            left: calc(100% / 3);
         }
     
         &.intro_ball_3{
             .intro_ball_img{
                 background-image: url("../assets/img/game_ball_infinite.png");
+                background-position: left center;
             }
             left: 66%;
+            h1{
+                text-align: left;
+                padding-left: 11.5%;
+            }
         }
     }
 
@@ -575,6 +587,33 @@ main{
         }
         100% {
             transform: translateY(0) rotate(0deg);
+        }
+    }
+
+    .game_cloud {
+        background-image: url("../assets/img/game_cloud.png");
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        z-index: 1;
+        animation: cloud_flow 10s infinite;
+        transform: translateX(30px);
+    }
+
+    @keyframes cloud_flow {
+        0% {
+            transform: translateX(30px);
+        }
+        50% {
+            transform: translateX(-30px);
+        }
+        100% {
+            transform: translateX(30px);
         }
     }
 
