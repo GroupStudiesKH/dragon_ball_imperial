@@ -7,7 +7,7 @@ export default {
     const router = useRouter();
 
     const toLastPage = () => {
-      router.push({ name: "final" });
+      router.push({ name: "game" });
     };
 
     const toNextPage = () => {
