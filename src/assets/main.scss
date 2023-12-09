@@ -156,7 +156,7 @@ main{
 
     .game_intro_title{
         position: absolute;
-        top: 0;
+        top: -8%;
         left: 0;
         width: 100%;
         height: 100%;
@@ -164,10 +164,10 @@ main{
         background-image: url("../assets/img/game_intro_title.png");
         background-position: center center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: 90%;
 
-        @media(min-height: 770px){
-            top: -5%;
+        @media(max-height: 770px){
+            background-size: 80%;
         }
     }
 
@@ -182,6 +182,11 @@ main{
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
+
+        @media(max-height: 770px){
+            background-size: 80%;
+            top: 5%;
+        }
     }
 
     .main_product_full{
