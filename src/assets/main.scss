@@ -77,18 +77,18 @@ main{
 
         .game_score_ball{
             position: relative;
-            width: 5vw;
-            height: 5vw;
+            width: 5.5vw;
+            height: 5.5vw;
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
             z-index: 1;
-            margin: 4vh 0.5vw;
+            margin: 3.5vh 0.2vw;
             top:0;
             display: inline-block;
 
             &:first-child{
-                margin-left: 17.3vw;
+                margin-left: 17vw;
             }
 
             &.wind_ball{
@@ -572,24 +572,6 @@ main{
         z-index: 4;
     }
 
-    @keyframes floatAnimation {
-        0% {
-            transform: translateY(0) rotate(0deg);
-        }
-        25% {
-            transform: translate(-300px, 10px) rotate(3deg);
-        }
-        50% {
-            transform: translate(0px, 10px) rotate(-3deg);
-        }
-        75% {
-            transform: translate(-150px, 10px) rotate(3deg);
-        }
-        100% {
-            transform: translateY(0) rotate(0deg);
-        }
-    }
-
     .game_cloud {
         background-image: url("../assets/img/game_cloud.png");
         position: absolute;
@@ -628,7 +610,46 @@ main{
         background-repeat: no-repeat;
         background-size: 100%;
         z-index: 1;
-        animation: floatAnimation 2.5s infinite  alternate forwards;
+        animation: floatAnimation 30s infinite linear;
+        transform: translate(-150px, 0px);
+    }
+
+    @keyframes floatAnimation {
+        0%, 100% {
+            transform: translate(-150px, 0px);
+        }
+        10% {
+            transform: translate(-70px, 70px);
+            rotate: 5deg;
+        }   
+        15% {
+            transform: translate(-50px, 100px);
+            rotate: -5deg;
+        }
+        20% {
+            transform: translate(-30px, 50px);
+            rotate: 5deg;
+        }
+        30% {
+            transform: translate(0px, 0px);
+            rotate: 0deg;
+        }
+        45% {
+            transform: translate(-50px, -100px);
+            rotate: -5deg;
+        }
+        60% {
+            transform: translate(-300px, 100px);
+            rotate: -10deg;
+        }
+        72% {
+            transform: translate(-450px, 0px);
+            rotate: -5deg;
+        }
+        84% {
+            transform: translate(-300px, -100px);
+            rotate: 0deg;
+        }
     }
 
     .game_ball_rails{
