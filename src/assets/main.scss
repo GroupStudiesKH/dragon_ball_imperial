@@ -83,7 +83,7 @@ main{
             background-repeat: no-repeat;
             background-size: cover;
             z-index: 1;
-            margin: 3.8vh 0.5vw;
+            margin: 4vh 0.5vw;
             top:0;
             display: inline-block;
 
@@ -577,13 +577,13 @@ main{
             transform: translateY(0) rotate(0deg);
         }
         25% {
-            transform: translate(-50px, 10px) rotate(3deg);
+            transform: translate(-300px, 10px) rotate(3deg);
         }
         50% {
-            transform: translate(00px, 10px) rotate(-3deg);
+            transform: translate(0px, 10px) rotate(-3deg);
         }
         75% {
-            transform: translate(-20px, 10px) rotate(3deg);
+            transform: translate(-150px, 10px) rotate(3deg);
         }
         100% {
             transform: translateY(0) rotate(0deg);
