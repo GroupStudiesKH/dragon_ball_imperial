@@ -668,7 +668,7 @@ main{
             z-index: 1;
             transform: translateX(110vw);
             //animate from top to bottom and disappear
-            animation: ballAnimation 5s linear forwards;
+            animation: ballAnimation 4s linear forwards;
 
             &.clicked{
                 animation-play-state: paused;
